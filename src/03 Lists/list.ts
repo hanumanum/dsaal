@@ -25,7 +25,6 @@ export const ListFactory = (): TList => {
         listSize = pos = 0;
     };
 
-    
     const find = (element: any) => {
         for (let i = 0; i < dataStore.length; i++) {
             if (dataStore[i] === element)

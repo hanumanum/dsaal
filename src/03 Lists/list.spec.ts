@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { TList, ListFactory } from './lists';
+import { TList, ListFactory } from './list';
 
 describe('List ADT tests, simple values', () => {
     let list: TList = ListFactory()
