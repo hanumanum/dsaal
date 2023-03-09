@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { TList, ListFactory } from './List';
 
 describe('List ADT tests, simple values', () => {
-    let list: TList = ListFactory()
+    let list: TList<string> = ListFactory()
     beforeEach(() => {
         list.clear()
         list.append("Sun")

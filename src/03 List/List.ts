@@ -1,24 +1,24 @@
-export type TList = {
+export type TList<T> = {
     clear: () => void
-    find: (element: any) => number
+    find: (element: T) => number
     toString: () => string
-    insert: (element: any, after: any) => boolean
-    append: (element: any) => void
-    remove: (element: any) => boolean
+    insert: (element: T, after: any) => boolean
+    append: (element: T) => void
+    remove: (element: T) => boolean
     front: () => void
     end: () => void
     prev: () => void
     next: () => void
     currPos: () => number
     moveTo: (position: number) => void
-    getElement: () => any
+    getElement: () => T
     length: () => number
 }
 
-export const ListFactory = (): TList => {
+export const ListFactory = <T>(): TList<T> => {
     let listSize = 0;
     let pos = 0;
-    let dataStore: any[] = [];
+    let dataStore: T[] = [];
 
     const clear = () => {
         dataStore = [];

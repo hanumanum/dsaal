@@ -1,7 +1,7 @@
-export type TStack = {
-    push: (element: any) => void,
-    pop: () => any,
-    peek: () => any,
+export type TStack<T> = {
+    push: (element: T) => void,
+    pop: () => T | undefined,
+    peek: () => T,
     length: () => number,
     clear: () => void
 }
@@ -9,11 +9,11 @@ export type TStack = {
 
 //In this implementation poped values are not really deleted from the stack. 
 //This is not a memory efficient solution.
-export const StackFactory = (): TStack => {
+export const StackFactory = <T>(): TStack<T> => {
     let top = 0
-    const dataStore: any[] = [];
+    const dataStore: T[] = [];
 
-    const push = (element: any) => dataStore[top++] = element;
+    const push = (element: T) => dataStore[top++] = element;
 
     const pop = () => dataStore[--top];
 
@@ -35,10 +35,10 @@ export const StackFactory = (): TStack => {
 
 //In this implementation poped values are really deleted from the stack. 
 //This is a memory efficient solution.
-export const StackFactoryV2 = (): TStack => {
-    let dataStore: any[] = [];
+export const StackFactoryV2 = <T>(): TStack<T> => {
+    let dataStore: T[] = [];
 
-    const push = (element: any) => { dataStore.push(element) };
+    const push = (element: T) => { dataStore.push(element) };
 
     const pop = () => dataStore.pop();
 

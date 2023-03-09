@@ -5,8 +5,8 @@ const objects = ['sun','moon','jupiter','saturn']
 
 describe('Stack tests, simple values', () => {
     
-    let stack: TStack = StackFactoryV2()
-    let stack2: TStack = StackFactoryV2()
+    let stack: TStack<string> = StackFactoryV2()
+    let stack2: TStack<string> = StackFactoryV2()
     beforeEach(() => {
         stack.clear()
         objects.map(stack.push)
