@@ -59,8 +59,6 @@ describe('Linked List tests', () => {
     test('iteration test', () => {
         let next = linkedList.head()?.next
         for (let rune of futark) {
-            console.log(next?.element)
-            
             expect(next?.element).toBe(rune)
             next = next?.next
         }
@@ -68,6 +66,4 @@ describe('Linked List tests', () => {
         expect(linkedList.length()).toBe(futark.length)
 
     })
-
-
 });
