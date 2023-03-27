@@ -4,7 +4,8 @@
   "description": "Data Structures and Algorithms by Michael McMillan rewritten in TypeScript with tests.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "start":"ts-node src/index.ts",
+    "test": "jest --verbose true"
   },
   "repository": {
     "type": "git",

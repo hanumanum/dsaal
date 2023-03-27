@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { DicitionarieFactory, TDicitionarie } from './Dictionarie';
 
 
-describe('Queue tests', () => {
+describe('dicitionnarie tests', () => {
 
     let dicitionnarie: TDicitionarie<string>, dicitionnarie2: TDicitionarie<string>;
 
