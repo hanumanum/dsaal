@@ -22,7 +22,7 @@ export const HashTableFactory = (length: number, collisionStrategy: EnumCollisio
     if (!isPrimeNumber(length))
         return new Error('Length must be a prime number')
 
-    const hashStore = (collisionStrategy === EnumCollisionHandlingStategy.SeparateChaining) 
+    const hashStore = (collisionStrategy === EnumCollisionHandlingStategy.SeparateChaining)
         ? Array(length).fill(null).map(() => new Array())
         : Array(length).fill(null)
 
@@ -54,16 +54,15 @@ export const HashTableFactory = (length: number, collisionStrategy: EnumCollisio
                     index++
                 }
                 hashStore[index] = [key, value]
-
             }
         },
         get: (key: string) => {
             let index = hornersMethodHash(key)
-            if (hashStore[index] !== null && hashStore[index][0] === key){
+            if (hashStore[index] !== null && hashStore[index][0] === key) {
                 return hashStore[index]
             }
             else {
-                while(hashStore[index] !== null && hashStore[index][0] !== key){
+                while (hashStore[index] !== null && hashStore[index][0] !== key) {
                     index++
                 }
 
@@ -87,10 +86,9 @@ export const HashTableFactory = (length: number, collisionStrategy: EnumCollisio
     }
 
     const showDistro = () => {
-        console.log(hashStore);
-        /* hashStore
-            .filter((val) => val !== null)
-            .map((val, i) => console.log(`${i}: ${val}`)) */
+        hashStore
+            .filter((val) => val !== null && val.length > 0)
+            .map((val, i) => console.log(`${i}: ${val}`))
     }
 
     return {

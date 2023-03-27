@@ -1,7 +1,7 @@
 import { HashTableFactory, EnumCollisionHandlingStategy } from './08 Hash Table/HashTable';
 
 
-const hashTable = HashTableFactory(101, EnumCollisionHandlingStategy.SeparateChaining)
+const hashTable = HashTableFactory(101, EnumCollisionHandlingStategy.LinearProbing)
 console.log(hashTable)
 
 if (!(hashTable instanceof Error)) {
@@ -18,7 +18,4 @@ if (!(hashTable instanceof Error)) {
 
     const mmm = hashTable.get("Babby")
     console.log("----", mmm)
-
- 
-    
 }
