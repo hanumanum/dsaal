@@ -1,21 +1,19 @@
-import { HashTableFactory, EnumCollisionHandlingStategy } from './08 Hash Table/HashTable';
+import { BSTreeFactory } from './10 Tree/BTree';
 
+const BSTree = BSTreeFactory();
 
-const hashTable = HashTableFactory(101, EnumCollisionHandlingStategy.LinearProbing)
-console.log(hashTable)
+[554, -1, 0, 21, 0, 19, 22, 0, 10, 18, 0, 15, 12, 0, 120, 0, 11].map(BSTree.insert)
 
-if (!(hashTable instanceof Error)) {
-    hashTable.put("Gara", "Gara Persone")
-    hashTable.put("Danny", "Danny Boy")
-    hashTable.put("Cynthia", "Cynthia Girl")
+/*console.log(BSTree.inOrder(BSTree.getRoot()))
+console.log(BSTree.preOrder(BSTree.getRoot()))
+console.log(BSTree.postOrder(BSTree.getRoot()))
+*/
+//console.log(BSTree.inOrder(BSTree.getRoot()))
+//console.log(BSTree.getMin())
+//console.log(BSTree.getMax())
+//console.log(BSTree.printTree())
+console.log(BSTree.printTree())
+BSTree.remove(120)
+console.log(BSTree.printTree())
 
-    hashTable.showDistro()
-    const ddd = hashTable.get("Gara")
-    console.log("----", ddd)
-
-    const bbb = hashTable.get("Danny")
-    console.log("----", bbb)
-
-    const mmm = hashTable.get("Babby")
-    console.log("----", mmm)
-}
+console.log("-----------find ----------\n", BSTree.find(0))
