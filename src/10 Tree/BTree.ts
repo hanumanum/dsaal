@@ -132,7 +132,7 @@ export const BSTreeFactory = <T>(): BSTree<T> => {
             return null
 
         while (current.left !== null) {
-            current = current?.left;
+            current = current.left;
         }
 
         return current;
